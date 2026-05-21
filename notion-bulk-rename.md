@@ -38,7 +38,7 @@ Always run dry-run first, show output, then ask the user to confirm before apply
 
 **Step 2 — Dry run:**
 ```bash
-cd /path/to/notion-bulk-rename && .venv/bin/python rh_rename.py \
+cd /path/to/notion-bulk-rename && .venv/bin/python notion_bulk_rename.py \
   --page-id "PAGE_ID_OR_URL" \
   --find "FIND_STRING" \
   --replace "REPLACE_STRING" \
@@ -49,7 +49,7 @@ cd /path/to/notion-bulk-rename && .venv/bin/python rh_rename.py \
 
 **Step 4 — Live run:**
 ```bash
-cd /path/to/notion-bulk-rename && .venv/bin/python rh_rename.py \
+cd /path/to/notion-bulk-rename && .venv/bin/python notion_bulk_rename.py \
   --page-id "PAGE_ID_OR_URL" \
   --find "FIND_STRING" \
   --replace "REPLACE_STRING"

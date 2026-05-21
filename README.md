@@ -4,7 +4,7 @@ Rename child pages and databases on a Notion parent page via find/replace string
 
 ## What It Does
 
-Given a Notion parent page, `rh_rename.py` fetches all child pages and databases, finds any whose titles contain your search string, and replaces it with your replacement string. Run with `--dry-run` first to preview changes before applying them.
+Given a Notion parent page, `notion_bulk_rename.py` fetches all child pages and databases, finds any whose titles contain your search string, and replaces it with your replacement string. Run with `--dry-run` first to preview changes before applying them.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Make sure the integration has been connected to the target Notion page (open the
 ## Usage
 
 ```bash
-.venv/bin/python rh_rename.py \
+.venv/bin/python notion_bulk_rename.py \
   --page-id "https://www.notion.so/Your-Page-abc123..." \
   --find "Old Prefix" \
   --replace "New Prefix" \
