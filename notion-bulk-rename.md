@@ -1,11 +1,11 @@
 ---
 name: notion-bulk-rename
-description: Use when the user wants to rename child pages or databases on a Notion parent page by replacing a string in their titles.
+description: Use when the user wants to rename child pages or databases on a Notion parent page by replacing a string in their titles. Walks the full page hierarchy recursively.
 ---
 
 # Notion Bulk Rename
 
-Renames child databases and pages on a Notion parent page via find/replace string substitution.
+Recursively renames child databases and pages under a Notion parent page via find/replace string substitution. Drills through all container blocks (callouts, toggles, columns, synced blocks) at any depth.
 
 ## Script Location
 
@@ -58,6 +58,8 @@ cd /path/to/notion-bulk-rename && .venv/bin/python notion_bulk_rename.py \
 ## Notes
 
 - `--page-id` accepts full Notion URLs or raw UUIDs.
-- Handles both `child_database` and `child_page` block types.
-- Works up to ~100 children per page (Notion API single-call limit).
+- Handles both `child_database` and `child_page` block types at any nesting depth.
+- Recurses through container blocks (callout, toggle, column, synced_block, etc.) to find pages nested inside them.
+- Handles pagination automatically — no 100-item limit.
+- Skips blocks the integration cannot access and logs a warning; does not abort.
 - Uses `load_dotenv(override=True)` — the `.env` value always wins over any shell environment variable.
